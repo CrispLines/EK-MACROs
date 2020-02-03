@@ -1,0 +1,94 @@
+-- Write Document Text  
+set DocText to ""
+
+
+
+-- Opening Safari to Eriks url
+  
+tell application "Safari"
+    activate
+
+end tell
+open location "https://www.eriksbikeshop.com/"
+
+delay 3
+
+tell application "System Events"
+    -- Open URL
+    tell application process "Safari"
+
+        -- Select Search box 
+
+		keystroke TAB
+
+        keystroke ASCII character 31
+		
+		delay 1
+		
+		keystroke ASCII character 31
+		
+		delay 1
+		
+		keystroke ASCII character 31
+		
+		delay 1
+		
+		keystroke ASCII character 31
+		
+		delay 1
+		
+		keystroke ASCII character 31
+		
+		delay 1
+		
+        -- Enter search string
+        
+		delay 3
+        
+		keystroke "Bike Computer"
+        
+		delay 3
+		
+		-- Search nav move
+        
+        
+		keystroke ASCII character 31
+		
+		delay 1
+		
+		keystroke ASCII character 31
+		
+		delay 1
+		
+		keystroke return
+
+ 
+		delay 2
+    
+	end tell
+
+end tell
+
+
+
+
+tell application "Safari"
+    set AdditionalStuff to text of document 1
+    -- learn, not my CODE
+end tell
+
+-- Paste all content into DocText
+tell application "TextEdit"
+    activate
+
+    set thisDoc to make new document
+
+    -- OPENING REMARKS 
+    set ContentRelitive to "Content from webpage relative to search string. " & return & return
+
+    set DocText to "Below is the content copied from a web page." & return & return & ContentRelitive & return & space & AdditionalStuff
+    tell thisDoc
+        set it's text to DocText & "Space Filler. "
+    end tell
+
+end tell
