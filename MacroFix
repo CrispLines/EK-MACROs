@@ -1,0 +1,14 @@
+to clickID(someID)
+    tell application "Safari"
+        do JavaScript "document.getElementById(\"" & someID & "\").firstElementChild.click();" in document 1
+    end tell
+end clickID
+
+open location "url" -- activates default application
+
+tell application "System Events"
+    tell application process "Safari" -- click element
+        delay 3
+        clickID("theid")
+    end tell
+end tell
