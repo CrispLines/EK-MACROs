@@ -1,0 +1,72 @@
+-- creates a function
+
+
+to clickID("ctl19_searchText")
+
+
+-- what program to control
+
+
+tell application "Safari"
+
+
+-- performs JavaScript code that clicks on the element of a specific id
+
+do JavaScript "document.getElementById('" & ctl19_searchText & "').click();" in document 1 
+
+
+-- done talking to Safari
+
+end tell
+
+-- done with the function
+
+
+end clickID 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Write Document Text  
+set DocText to ""
+
+
+
+-- Opening Safari to Eriks url
+  
+tell application "Safari"
+    activate
+
+end tell
+
+open location "https://www.eriksbikeshop.com/"
+
+delay 3
+
+tell application "System Events"
+    
+-- Open URL
+    
+tell application process "Safari"
+
+-- Select Search box 
+
+
+clickID("btnSearch")
+
+
+		
+-- Enter search string
+        
+keystroke "Skateboards"
+        
