@@ -1,0 +1,17 @@
+to clickID(btnSearch)
+	
+	tell application "Safari"
+		do JavaScript "document.getElementById(\"" & btnSearch & "\").firstElementChild.click();" in document 1
+	end tell
+end clickID
+
+open location "https://www.eriksbikeshop.com/" -- activates default application
+
+tell application "System Events"
+	tell application process "Safari" -- click element
+		delay 3
+		clickID(btnSearch)
+		
+	end tell
+	
+end tell
